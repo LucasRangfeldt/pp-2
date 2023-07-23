@@ -84,6 +84,10 @@ body {
     text-align: center;
     margin-top: 50px;
   }
+  .quiz-title img {
+    height: 500px;
+  }
+
 .button {
     text-align: center;
     margin-top: 15px;
