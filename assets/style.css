@@ -1,0 +1,79 @@
+body {
+    background-color: #95978D;
+    color: #333333;
+}
+
+  .navbar {
+    height: 100px;
+  }
+  
+  ul {
+    background-color: #8f8d97;
+    list-style-type: none;
+    margin: 15px 0 0 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    height: 50px;
+  }
+  
+  li {
+    flex: 1;
+  }
+  
+  li a {
+    font-size: larger;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #020202;
+    height: 100%;
+  }
+  
+  li a:hover {
+    text-decoration: underline;
+  }
+  .title {
+    text-align: center;
+  }
+  
+  .flex-head {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .heading-left, .heading-center, .heading-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+  }
+  
+  .heading-left {
+    background-image: url(../assets/images/learningtime.jpeg);
+  }
+  
+  .heading-center {
+    background-image: url(../assets/images/gametime.jpeg);
+
+  }
+  
+  .heading-center h1 {
+    font-size: 48px;
+    font-family: 'Noto Serif Khitan Small Script', sans-serif;
+    margin: 0;
+  }
+  
+  .heading-center h2 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .heading-right {
+    background-image: url(../assets/images/learntime.jpeg);
+  }
