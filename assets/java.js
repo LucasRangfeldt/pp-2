@@ -3,13 +3,12 @@
 */
 
 // Different functions required for the quiz.
-function quiz(questions, quizContainer, resultsContainer, checkAnswerButton) {
-    "use strict";
+function quiz(questions, quizContainer, resultsContainer, checkAnswerButton, endScreen) {
     function showQuestions(question, quizContainer) {
         var output = [];
         for (var i = 0; i < question.length; i++) {
         answers = [];
-        for (var letter in question[i].answers) {
+        for (letter in question[i].answers) {
           answers.push(
             '<label>' +
             '<input type="radio" name="question' +
@@ -193,3 +192,47 @@ function quiz(questions, quizContainer, resultsContainer, checkAnswerButton) {
   var resultsContainer = document.getElementById('score');
   var checkAnswerButton = document.getElementById('check-Answer');
   quiz(myQuestions, quizContainer, resultsContainer, checkAnswerButton);
+
+  var currentQuestionIndex = 0;
+  
+  var prevButton = document.getElementById('previous');
+  var nextButton = document.getElementById('next')
+  var checkAnswerButton = document.getElementById('check-Answer');
+
+  function showQuestion(0) {
+    if (currentQuestionIndex === myQuestions.length - 1) {
+        toggleCheckAnswerButton(true);
+    } else {
+        toggleCheckAnswerButton(false);
+    }
+  }
+
+  function toggleCheckAnswerButton(show) {
+    if (show) {
+        checkAnswerButton.style.display = 'block';
+    } else {
+        checkAnswerButton.style.display = 'none';
+    }
+  }
+
+
+  function nextQuestion() {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < myQuestions.length) {
+        showQuestion(currentQuestionIndex);
+    }   
+    
+    prevButton.removeAttribute('disabled');
+  }
+
+  function previousQuestion() {
+    if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        showQuestion(currentQuestionIndex);
+    }
+    if (currentQuestionIndex === 0) {
+        prevButton.setAttribute('disabled', 'true');
+    }
+  }
+
+  

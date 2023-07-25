@@ -56,7 +56,7 @@ body {
   }
   
   /* images taken from pexels.com*/
-  
+
   .heading-left {
     background-image: url(../assets/images/learningtime.jpeg);
   }
@@ -103,4 +103,11 @@ body {
     color: #333333;
     text-decoration: none;
     border-radius: 4px;
+}
+
+/*quiz style*/
+
+#quiz {
+    font-size: 120%;
+    
 }
