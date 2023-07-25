@@ -55,6 +55,8 @@ body {
     height: 400px;
   }
   
+  /* images taken from pexels.com*/
+  
   .heading-left {
     background-image: url(../assets/images/learningtime.jpeg);
   }
@@ -84,6 +86,8 @@ body {
     text-align: center;
     margin-top: 50px;
   }
+  /* image matching the current quiz-theme */
+
   .quiz-title img {
     height: 500px;
   }
