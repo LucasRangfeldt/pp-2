@@ -108,6 +108,7 @@ body {
 /*quiz style*/
 
 #quiz {
-    font-size: 120%;
-    
+    max-width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
 }

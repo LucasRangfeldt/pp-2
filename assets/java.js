@@ -195,11 +195,12 @@ function quiz(questions, quizContainer, resultsContainer, checkAnswerButton, end
 
   var currentQuestionIndex = 0;
   
+  
   var prevButton = document.getElementById('previous');
   var nextButton = document.getElementById('next')
   var checkAnswerButton = document.getElementById('check-Answer');
 
-  function showQuestion(0) {
+  function showQuestion() {
     if (currentQuestionIndex === myQuestions.length - 1) {
         toggleCheckAnswerButton(true);
     } else {
