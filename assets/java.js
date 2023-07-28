@@ -1,10 +1,18 @@
 /*
     The following code is based on assistance provided by OpenAI and my buddy Mike, thanks Mike!
 */
-  // quiz-questions
+document.addEventListener('DOMContentLoaded', () => {
+
+    showQuestion(0);
+
+});
+
+
+
+// quiz-questions
   
-  const myQuestions = [
-      {
+    const myQuestions = [
+        {
         question: "Question 1: In what year did Adolf Hitler become Chancellor for Germany?",
         answers: {
             a: "1928",
@@ -12,7 +20,7 @@
             c: "1933"
         },
         correctAnswer: "c"
-      },
+    },
      {
         question: "Question 2: Who was a part of the allies during World War 2?",
         answers: {
@@ -97,6 +105,7 @@
      },
     ];
 
+   
     const questionElement = document.getElementById('question');
     const answersElement = document.getElementById('answers');
     const prevButton = document.getElementById('previous');
@@ -104,21 +113,91 @@
 
     let currentQuestionIndex = 0;
 
-    function showQuestion(index) {
-        const question = questions[0];
-        questionElement.textContent = question.question;
+    // function for showing questions 
+function showQuestion(index) {
+    const question = myQuestions[index];
+    questionElement.textContent = question.question;
 
-        answersElement.innerHTML = '';
-        for (const option in question.answers) {
-            const label = document.createElement('label');
-            const input = document.createElement('input');
-            input.type = 'radio';
-            input.name = 'answer';
-            input.value = 'option';
-            label.appendChild(input);
-            label.appendChild(document.createTextNode(`${option.toUppercase()}: ${question.answers[option]}`));
-            answersElement.appendChild(label);
-        }
-        
+    answersElement.innerHTML = '';
+    for (const option in myQuestions[index].answers) {
+        const label = document.createElement('label');
+        const input = document.createElement('input');
+        input.type = 'radio';
+        input.name = 'answer';
+        input.value = 'option';
+         label.appendChild(input);
+         label.appendChild(document.createTextNode(`${option.toUpperCase()}: ${question.answers[option]}`));
+         answersElement.appendChild(label);
     }
-    
+
+    prevButton.disabled = index === 0;
+    nextButton.disabled = index === myQuestions.length -1;
+}
+
+ function checkAnswer() {
+    const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+     if (!selectedAnswer) return;
+
+    const userAnswer = selectedAnswer.value;
+    const correctAnswer = myQuestions[currentQuestionIndex].correctAnswer;
+
+    if (userAnswer === correctAnswer) {
+            selectedAnswer.parentElement.style.color = 'light-green';
+     } else {
+            selectedAnswer.parentElement.style.color = 'red';
+     }
+ }
+
+ // function for counting correct answers
+function countCorrectAnswers() {
+    let correctCount = 0;
+    const answerInputs = document.querySelectorAll('input[name="answer"]:checked');
+
+    answerInputs.forEach(input => {
+        const userAnswer = input.value;
+        const correctAnswer = myQuestions[currentQuestionIndex].correctAnswer;
+
+        if (userAnswer === correctAnswer) {
+            correctCount++;
+        }
+
+    })
+
+    return correctCount;
+
+}
+showQuestion(currentQuestionIndex);
+   
+   // Eventlistener for show results button
+       document.getElementById('showResult').addEventListener('click', () => {
+           showResult();
+       });
+   
+   // Eventlistener for click on previous and next buttons
+    prevButton.addEventListener('click', () => {
+           if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                showQuestion(currentQuestionIndex);
+
+           }
+       });
+   
+       nextButton.addEventListener('click', () => {
+           if (currentQuestionIndex < questions.length - 1) {
+               currentQuestionIndex++;
+               showQuestion(currentQuestionIndex);
+           }
+       });
+
+       // function for showing results
+
+       function showResult() {
+        const totalQuestions = myQuestions.length;
+        const correctAnswers = countCorrectAnswers();
+
+        const resultElement = document.getElementById('result');
+        const scoreElement = document.getElementById('score');
+
+        scoreElement.textContent = `You scored ${correctAnswers} out of ${totalQuestions} questions correctly!`;
+        resultElement.style.display = 'block';
+    }
