@@ -132,19 +132,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 label.appendChild(document.createTextNode(`${option.toUpperCase()}: ${question.answers[option]}`));
                 answersElement.appendChild(label);
             }
-    
+            // Disables previous button if you are on the first question
             prevButton.disabled = index === 0;
-            nextButton.disabled = index === myQuestions.length +1;
+
+            // Displays  'Submit Final Answer' instead of Next if you are on the last question.
+            if (index === myQuestions.length -1) {
+                nextButton.textContent = 'Submit Final Answer';
+            } else {
+                nextButton.textContent = 'Next';
+            }
         }
     
         //function for checking and saving selected answers
-    
     
             function checkAnswer() {
                 const selectedAnswer = document.querySelector('input[name="answer"]:checked');
                 if (!selectedAnswer) {
                     alert('Select an answer before clicking Next.');
-                    return;
                 }
     
                 const answerValue = selectedAnswer.value;
