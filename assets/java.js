@@ -124,7 +124,7 @@ function showQuestion(index) {
         const input = document.createElement('input');
         input.type = 'radio';
         input.name = 'answer';
-        input.value = 'option';
+        input.value = option; 
          label.appendChild(input);
          label.appendChild(document.createTextNode(`${option.toUpperCase()}: ${question.answers[option]}`));
          answersElement.appendChild(label);
@@ -183,7 +183,7 @@ showQuestion(currentQuestionIndex);
        });
    
        nextButton.addEventListener('click', () => {
-           if (currentQuestionIndex < questions.length - 1) {
+           if (currentQuestionIndex < myQuestions.length - 1) {
                currentQuestionIndex++;
                showQuestion(currentQuestionIndex);
            }
