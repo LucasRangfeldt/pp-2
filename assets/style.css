@@ -1,6 +1,9 @@
 body {
     background-color: #95978D;
     color: #333333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 /* navbar style */
   .navbar {
@@ -35,52 +38,30 @@ body {
     text-decoration: underline;
   }
 
-  /* title style and also background images */
+  /* title style */
   .title {
     text-align: center;
   }
-  
+  /* header-images */
+
   .flex-head {
     display: flex;
     justify-content: space-between;
-  }
-  
-  .heading-left, .heading-center, .heading-right {
-    flex: 1;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 400px;
   }
   
-  /* images taken from pexels.com*/
-
-  .heading-left {
-    background-image: url(../assets/images/learningtime.jpeg);
+  .image-1,
+  .image-2,
+  .image-3 {
+    padding: 10px;
+  }
+  .image-1 img,
+  .image-2 img,
+  .image-3 img {
+    width: 100%;
+    height: auto;
   }
   
-  .heading-center {
-    background-image: url(../assets/images/gametime.jpeg);
-
-  }
-  
-  .heading-center h1 {
-    font-size: 48px;
-    font-family: 'Noto Serif Khitan Small Script', sans-serif;
-    margin: 0;
-  }
-  
-  .heading-center h2 {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 18px;
-    margin: 0;
-  }
-  
-  .heading-right {
-    background-image: url(../assets/images/learntime.jpeg);
-  }
   /* quiz info section */
   .quiz-title {
     text-align: center;
@@ -106,10 +87,23 @@ body {
 }
 
 /* Quiz Style */
-#quiz
+.question-box {
+  font-family: 'Quicksand', 'sans-serif';
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+.quiz-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#quiz-image img {
+  max-width: 50%;
+  height: auto;
+}
 #question {
     text-align: center;
-    height: 50vh;
 }
 #answers {
     text-align: center;

@@ -7,15 +7,18 @@ document.addEventListener('DOMContentLoaded', () => {
          const myQuestions = [
             {
             question: "Question 1: In what year did Adolf Hitler become Chancellor for Germany?",
+            image: '<img src="../pp-2/assets/images/1.jpg" alt="Nazi gathering during world war 2" id="question-1">',
             answers: {
                 a: "1928",
                 b: "1931",
                 c: "1933"
             },
-            correctAnswer: "c",
+            correctAnswer: "c"
+           
         },
          {
             question: "Question 2: Who was a part of the allies during World War 2?",
+            image: '<img src="../pp-2/assets/images/2.jpg" alt="Allied soldier holding his helmet with a big smile" id="question-2">',
             answers: {
                 a: 'Italy, China, United States and Great Britain',
                 b: 'France, United States, Great Britain, China and the Soviet Union',
@@ -23,9 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 
             },
             correctAnswer: 'b'
+            
          },
          {
             question: "Question 3: What Was The Codename For The Allied Invasion Of Normandy June 6th 1944?",
+            image: '<img src="../pp-2/assets/images/3.jpg" alt="Picture of Normandy, present day" id="question-3">',
             answers: {
                 a: 'Operation D-day',
                 b: 'Operation Barbarossa',
@@ -35,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
          },
          {
             question: "Question 4: Who was a part of the Axis?",
+            image: '<img src="../pp-2/assets/images/4.jpg" alt="Germans outside a cinema" id="question-4">',
             answers: {
                 a: 'Italy, Japan and Germany',
                 b: 'China, Japan and Germany',
@@ -44,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
          },
          {
             question: "Question 5: Who was the prime minister of Great Britain most of the time during the war?",
+            image: '<img src="../pp-2/assets/images/5.jpg" alt="Highly ranked british official, during the war" id="question-5">',
             answers: {
                 a: 'Winston Churchill' ,
                 b: 'Clemont Attlee' ,
@@ -53,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
          },
          {
             question: "Question 6: What was it that made the US enter the war and what year?",
+            image: '<img src="../pp-2/assets/images/6.jpg" alt="American warship" id="question-6">',
             answers: {
                 a: 'Imminent threat of nuclear bombs from the Axis, 1940',
                 b: 'They had lent so much money to the allies that if they did not win, they would likely not get their money back, 1942',
@@ -62,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
          },
          {
             question: "Question 7: How many people lost their lives during the war?",
+            image: '<img src="../pp-2/assets/images/7.jpg" alt="Train entrance to Auschwitz" id="question-7">',
             answers: {
                 a: '100 million',
                 b: '30 million',
@@ -71,6 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
          },
          {
             question: "Question 8: What was the turning point for the Eastern front, marking a major defeat for the german army?",
+            image: '<img src="../pp-2/assets/images/8.jpg" alt="Soldier raising the Soviet flag" id="question-8">',
             answers: {
                 a: 'Battle of Verdun',
                 b: 'Battle of Stalingrad',
@@ -80,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
          },
          {
             question: "Question 9: What was the event that started the war in 1939?",
+            image: '<img src="../pp-2/assets/images/9.jpg" alt="Fighter plane terrifying the skies" id="question-9">',
             answers: {
                 a: 'Germany invades Poland',
                 b: 'France refuses to comply with the Nazi regime, causing Germany to declare war on France',
@@ -89,6 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
          },
          {
             question: "Question 10: Which country was invaded and occupied by Germany during the war, leading to the establishment of the Vichy government?",
+            image: '<img src="../pp-2/assets/images/10.jpg" alt="Allied soldiers outside a long, broken building" id="question-10">',
             answers: {
                 a: 'Italy',
                 b: 'France',
@@ -118,11 +130,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const question = myQuestions[index];
             questionElement.textContent = question.question;
             
-            const questionImage = document.getElementById(question.imageId);
-
-            document.getElementById('quiz-image'). innerHTML = '';
-            document.getElementById('quiz-image').appendChild(questionImage);
+            // shows an image connected to each question
+            const questionImageContainer = document.getElementById('quiz-image');
+            questionImageContainer.innerHTML = question.image;
             
+            // A, B, C answer options
             answersElement.innerHTML = '';
             for (const option in myQuestions[index].answers) {
                 const label = document.createElement('label');
