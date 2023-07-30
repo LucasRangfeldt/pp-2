@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 b: "1931",
                 c: "1933"
             },
-            correctAnswer: "c"
+            correctAnswer: "c",
         },
          {
             question: "Question 2: Who was a part of the allies during World War 2?",
@@ -117,7 +117,12 @@ document.addEventListener('DOMContentLoaded', () => {
         function showQuestion(index) {
             const question = myQuestions[index];
             questionElement.textContent = question.question;
-    
+            
+            const questionImage = document.getElementById(question.imageId);
+
+            document.getElementById('quiz-image'). innerHTML = '';
+            document.getElementById('quiz-image').appendChild(questionImage);
+            
             answersElement.innerHTML = '';
             for (const option in myQuestions[index].answers) {
                 const label = document.createElement('label');
