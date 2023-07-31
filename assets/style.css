@@ -1,5 +1,5 @@
 body {
-    background-color: #95978D;
+  background-color: #252023;
     color: #333333;
     margin: 0;
     padding: 0;
@@ -8,6 +8,7 @@ body {
 /* navbar style */
   .navbar {
     height: 100px;
+    margin: 20px 10px 20px 10px;
   }
   
   ul {
@@ -25,13 +26,14 @@ body {
   }
   
   li a {
-    font-size: larger;
+    font-size: 18px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    color: #020202;
+    color: white;
     height: 100%;
+    font-family: 'Libre Baskerville', serif;
   }
   
   li a:hover {
@@ -40,6 +42,7 @@ body {
 
   /* title style */
   .title {
+    font-family: 'Noto Serif Vithkuqi', serif;
     text-align: center;
   }
   /* header-images */
@@ -64,18 +67,25 @@ body {
   
   /* quiz info section */
   .quiz-title {
+    font-family: 'Noto Serif Vithkuqi', serif;
     text-align: center;
     margin-top: 50px;
+    font-size: 26px;
+    color: white;
+  }
+  .quiz-info {
+    margin: 30px 0 75px 0;
+    font-family: 'Noto Serif Vithkuqi', serif;
+    font-size: 18px;
+    text-align: center;
+    color: white;
   }
   /* image matching the current quiz-theme */
 
-  .quiz-title img {
-    height: 500px;
-  }
-
+  /* Next and previous button styles */
 .button {
     text-align: center;
-    margin-top: 15px;
+    margin: 20px 0 20px 0;
 }
 .button a {
     display: inline-block;
@@ -87,24 +97,49 @@ body {
 }
 
 /* Quiz Style */
-.question-box {
-  font-family: 'Quicksand', 'sans-serif';
-  font-size: 36px;
-  margin-bottom: 15px;
+.quiz-cont {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
-.quiz-image {
+.question-image-section {
+  border: 2px solid grey;
+  border-radius: 10px;
+  width: 80%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  
+}
+.question-box {
+  background-color: #8F8D97;
+  color: #020202;
+  font-weight: 500;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 30px;
+  margin-bottom: 20px;
+  padding: 20px;
+  text-align: center;
+}
+#quiz-image {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
 #quiz-image img {
-  max-width: 50%;
-  height: auto;
+  width: 500px;
+ height: 600px;
+ object-fit: cover;
 }
+
 #question {
     text-align: center;
 }
 #answers {
-    text-align: center;
+    text-align: justify;
 }

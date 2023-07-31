@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <style>
-                     @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Khitan+Small+Script&family=Quicksand:wght@300&display=swap');
-            </style>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Noto+Serif+Vithkuqi:wght@500&display=swap');
+          </style>
                     <link rel="stylesheet" href="assets/style.css">
-                        <title>QuizMaestro</title>
+                        <title>Quiz</title>
 </head>
 <body> 
     <div class="navbar">
@@ -21,7 +21,7 @@
         </ul>
     </div>
     <div class="title">
-        <h1>QuizMaestro.com</h1>
+        <h1>QuizMaster</h1>
         <h2>We Love Learning</h2>
     </div>
     <div class="flex-head">
@@ -35,28 +35,28 @@
             <img src="../pp-2/assets/images/learntime.jpeg" alt="A man and a woman rehearsing together">
         </div>
     </div>
-    <div class="quiz-title">
-        <h2>Current Theme</h2>
-        <h4>The current quiz is about World War 2 and consists of 10 questions.</h4>
-        <div class="quiz-image">
-            <img src="../pp-2/assets/images/ww2grave.jpg" alt="Soldiers grave on the battlefield">
+        <div class="Current">
+            <h2 class="quiz-title">Current Theme</h2>
+            <h4 class="quiz-title">World War II</h4>
+            <p class="quiz-info">Let's test your knowledge about the bloodiest war in human history, 10 questions, 30 possible answers.</p>
         </div>
-    </div>
-
-    <div id="quiz-cont">
-        <div id="question" class="question-box"></div>
-        <div id="quiz-image" class="quiz-image"></div>
-        <div id="answers" class="answers-box"></div>
-           <div class="button">
+        <div id="quiz-cont">
+          <div class="question-image-section">
+            <div id="question" class="question-box"></div>
+            <div id="answers" class="answers-box"></div>
+            <div id="quiz-image" class="quiz-image"></div>
+          </div>
+            
+            <div class="button">
                 <button id="previous">Previous</button>
                 <button id="next">Next</button>
+             </div>
+            <div id="result">
+                <h2>Your Result</h2>
+                <p id="score"></p>
             </div>
-        <div id="result">
-            <h2>Your Result</h2>
-            <p id="score"></p>
+            <button id="showResult" class="button">Show Your Results</button>
         </div>
-        <button id="showResult" class="button">Show Your Results</button>
-    </div>
     <script src="assets/java.js"></script>
 </body>
 </html>
