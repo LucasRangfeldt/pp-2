@@ -45,18 +45,38 @@
             <div id="question" class="question-box"></div>
             <div id="answers" class="answers-box"></div>
             <div id="quiz-image" class="quiz-image"></div>
-          </div>
-            
             <div class="button">
-                <button id="previous">Previous</button>
-                <button id="next">Next</button>
+                <button id="previous" class="button">Previous</button>
+                <button id="next" class="button">Next</button>
              </div>
+            <button id="showResult" class="button">Show Your Results</button>
             <div id="result">
                 <h2>Your Result</h2>
                 <p id="score"></p>
             </div>
-            <button id="showResult" class="button">Show Your Results</button>
+          </div>
         </div>
+        <section id="updates">
+            <div class="title update-title">
+                <h2>Welcome to the Update section! Here you can share ideas for upcoming quiz subjects, and also read about upcoming challenges.</h2>
+            </div>
+            <div class="suggest sign">
+                <h3>Have a great idea that you would like to share?</h3>
+                    <p>Simply type it in below and click submit, we read messages daily, if we decide to use your idea you will ofcourse be credited!</p>
+                    <div class="register">
+                        <label for="email">Your Email:</label>
+                        <input type="email" name="email" id="email" required>
+                    </div>
+                    <div class="register">
+                        <label for="name">Your Name:</label>
+                        <input type="text" name="name" id="name" required>
+                    </div>
+                    <div class="idea-box"></div>
+                        <textarea rows="10" cols="30"></textarea>
+                    </div>
+            </div>
+                
+        </section>
     <script src="assets/java.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 body {
   background-color: #252023;
-    color: #333333;
+  color: white;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -86,6 +86,7 @@ body {
 .button {
     text-align: center;
     margin: 20px 0 20px 0;
+    font-size: 20px;
 }
 .button a {
     display: inline-block;
@@ -105,14 +106,13 @@ body {
 .question-image-section {
   border: 2px solid grey;
   border-radius: 10px;
-  width: 80%;
+  max-width: 600px;
   background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
-  max-width: 600px;
-  margin: 0 auto;
+  margin: 0 auto 20px;
+
   
 }
 .question-box {
@@ -120,7 +120,7 @@ body {
   color: #020202;
   font-weight: 500;
   font-family: 'Libre Baskerville', serif;
-  font-size: 30px;
+  font-size: 25px;
   margin-bottom: 20px;
   padding: 20px;
   text-align: center;
@@ -129,17 +129,48 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
 }
+/*Media queries small screens*/
+
+media
 #quiz-image img {
-  width: 500px;
- height: 600px;
+  max-width: 100%;
+ max-height: 300px;
  object-fit: cover;
 }
 
 #question {
     text-align: center;
 }
-#answers {
-    text-align: justify;
+.answers-box {
+  letter-spacing: 1px;
+  text-align: center;
+  color: black;
+  margin: 20px;
+  font-family: 'Libre Baskerville', serif;
+
+}
+/* Result box */
+#result {
+  text-align: center;
+  color: black;
+  font-family: 'Libre Baskerville', serif;
+}
+
+#updates {
+  height: 100vh;
+}
+.register {
+  margin: 20px 0 0 0;
+}
+.update-title {
+  margin: 100px 20px 20px 20px;
+  
+}
+.suggest {
+  font-family: 'Libre Baskerville', serif;
+  text-align: center;
+}
+.idea-box {
+  margin: 100px 0 0 0;
 }
