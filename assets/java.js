@@ -1,7 +1,6 @@
 /*
     The following code is based on assistance provided by OpenAI and my buddy Mike, thanks Mike!
 */
-document.addEventListener("DOMContentLoaded", () => {
   //Quiz questions
   const myQuestions = [{
       question: "Question 1: In what year did Adolf Hitler become Chancellor for Germany?",
@@ -125,6 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
     questionImageContainer.innerHTML = question.image;
     // A, B, C answer options
     answersElement.innerHTML = '';
+		
     for (const option in myQuestions[index].answers) {
       const label = document.createElement('label');
       const input = document.createElement('input');
@@ -134,17 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (userAnswer[index] === option) {
         input.checked = true;
       }
-      if (userAnswer[index] === option) {
-        if (userAnswer[index] === question.correctAnswer) {
-          label.classList.add('correct-answer');
-        }
-        else {
-          label.classList.add('wrong-answer');
-        }
-      }
-      else {
-        label.classList.remove('correct-answer', 'wrong-answer');
-      }
+      
       label.appendChild(input);
       label.appendChild(document.createTextNode(
         `${option.toUpperCase()}: ${question.answers[option]}`
@@ -162,6 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nextButton.textContent = 'Next';
     }
   }
+
   //function for checking and saving selected answers
   function checkAnswer() {
     const selectedAnswer = document.querySelector(
@@ -169,10 +160,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!selectedAnswer) {
       alert('Select an answer before clicking Next.');
     }
+		
     const answerValue = selectedAnswer.value;
     userAnswer[currentQuestionIndex] = answerValue;
     selectedAnswer[currentQuestionIndex] = answerValue;
   }
+
   // function for counting correct answers
   function countCorrectAnswers() {
     let correctCount = 0;
@@ -183,6 +176,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     return correctCount;
   }
+
+	// function for showing which question is right and wrong
+
+	function highlightIncorrectAnswer() {
+		const answerOptions = document.querySelectorAll('input[name="answer"]');
+		answerOptions.forEach((option) => {
+			option.parentElement.classList.remove('wrong-answer');
+			if (option.checked && option.value !== myQuestions[currentQuestionIndex].correctAnswer) {
+				option.parentElement.classList.add('wrong-answer');
+			}
+		});
+	}
   // Eventlistener for click on previous and next buttons
   prevButton.addEventListener('click', (event) => {
     event.preventDefault();
@@ -190,6 +195,9 @@ document.addEventListener("DOMContentLoaded", () => {
       currentQuestionIndex--;
       showQuestion(currentQuestionIndex);
     }
+		if (showResultsClicked === true) {
+			highlightIncorrectAnswer();
+		}
   });
   nextButton.addEventListener('click', (event) => {
     event.preventDefault();
@@ -197,17 +205,25 @@ document.addEventListener("DOMContentLoaded", () => {
     if (currentQuestionIndex < myQuestions.length - 1) {
       currentQuestionIndex++;
       showQuestion(currentQuestionIndex);
+			
     }
+		if (showResultsClicked === true) {
+			highlightIncorrectAnswer();
+		}
   });
+
+	let showResultsClicked = false;
+
   // Eventlistener for results button
   showResultButton.addEventListener('click', () => {
     if (userAnswer.length === myQuestions.length) {
       const totalQuestions = myQuestions.length;
       const correctAnswers = countCorrectAnswers();
       scoreElement.textContent =
-        `You scored ${correctAnswers} out of ${totalQuestions} questions correctly!`;
+        `You scored ${correctAnswers} out of ${totalQuestions} questions correctly, wrong answers will be highlighted red.`;
       resultElement.style.display = 'block';
       showResultButton.style.display = 'none';
+			showResultsClicked = true;
     }
     else {
       alert(
@@ -217,4 +233,3 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   // show first question upon page load
   showQuestion(currentQuestionIndex);
-});

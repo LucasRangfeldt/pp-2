@@ -16,9 +16,6 @@
           <a href="index.html">Home</a>
         </li>
         <li>
-          <a href="#MyScore">My Score</a>
-        </li>
-        <li>
           <a href="#Request">Request A Subject</a>
         </li>
       </ul>
@@ -46,7 +43,7 @@
     <div id="quiz-cont">
       <div class="question-image-section">
         <div id="question" class="question-box"></div>
-        <div id="answers" class="answers-box correct-answer wrong-answer"></div>
+        <div id="answers" class="answers-box"></div>
         <div id="quiz-image" class="quiz-image"></div>
         <div class="button">
           <button id="previous" class="button">Previous</button>
@@ -67,7 +64,7 @@
       <div class="suggest sign">
         <h3>Have a great idea that you would like to share?</h3>
         <div class="para">
-          <p>Simply type it in below and click submit, we read messages daily, <br> if we decide to use your idea you will ofcourse be credited! </p>
+          <p>Currently the Idea-box is a bit broken, send an email to lucas_rangfeldt@hotmail.com in the meantime!</p>
         </div>
         <div class="form-cont">
           <form id="idea">
@@ -80,10 +77,11 @@
               <input type="email" name="email" id="email" required>
             </div>
             <div class="idea-div-3">
-              <textarea required></textarea>
+              <label for ="textarea">Your Idea:</label>
+              <textarea name="textarea" required rows="5" cols="20"></textarea>
             </div>
             <div class="idea-div-4">
-              <input type="submit" value="Submit">
+              <input type="submit" value="Submit" id="submit-form">
             </div>
           </form>
         </div>

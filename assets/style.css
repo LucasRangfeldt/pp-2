@@ -112,7 +112,8 @@ body {
 .question-image-section {
   border: 2px solid grey;
   border-radius: 10px;
-  max-width: 600px;
+  max-width: 1000px;
+  max-height: 800px;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -137,25 +138,11 @@ body {
   justify-content: center;
   align-items: center;
 }
-/*Media queries small screens*/
 
-@media only screen and (max-width: 768px) {
-  #quiz-image img {
-    max-height: 150px;
-    max-width: 80%;
-  }
-  .question-box {
-    font-size: 16px;
-  }
-  .button {
-    font-size: 16px;
-  }
-
-}
 /* image connected to question */
 #quiz-image img {
-  max-width: 100%;
- max-height: 300px;
+  width: 300px;
+ height: 300px;
  object-fit: cover;
 }
 
@@ -171,11 +158,9 @@ body {
   font-family: 'Libre Baskerville', serif;
 
 }
-.correct-answer {
-  background-color: green;
-}
+
 .wrong-answer {
-  background-color: red;
+  background-color: rgba(255, 0, 0, 0.3);
 }
 
 
@@ -192,8 +177,11 @@ body {
   height: 25px;
   background-color: #333333;
 }
-#request {
-  height: 100vh;
+#showResult {
+ display: flex;
+ justify-content: center;
+  max-width: 200px;
+  margin: 20px auto;
 }
 
 /* Form and idea section */
@@ -225,8 +213,30 @@ margin: 15px;
 grid-row: span 1;
 }
 
-textarea {
-  width: 150px;
-  padding: 15px;
-  font-size: 16px;
+#submit-form {
+  font-family: 'Libre Baskerville', serif;
+  width: 200px;
+}
+
+/*Media queries small screens*/
+
+@media only screen and (max-width: 768px) {
+  li a {
+    font-size: 12px;
+  }
+  .question-image-section {
+    font-size: 14px;
+  }
+  #quiz-image img {
+    max-height: 300px;
+    max-width: 80%;
+    object-fit: cover;
+  }
+  .question-box {
+    font-size: 16px;
+  }
+  .button {
+    font-size: 16px;
+  }
+
 }
