@@ -133,7 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
             // shows an image connected to each question
             const questionImageContainer = document.getElementById('quiz-image');
             questionImageContainer.innerHTML = question.image;
-            
             // A, B, C answer options
             answersElement.innerHTML = '';
             for (const option in myQuestions[index].answers) {
@@ -149,6 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 label.appendChild(document.createTextNode(`${option.toUpperCase()}: ${question.answers[option]}`));
                 label.appendChild(document.createElement('br'));
                 answersElement.appendChild(label);
+                
             }
             // Disables previous button if you are on the first question
             prevButton.disabled = index === 0;
@@ -189,7 +189,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
         
         // Eventlistener for click on previous and next buttons
-            prevButton.addEventListener('click', () => {
+            prevButton.addEventListener('click', (event) => {
+                event.preventDefault();
                if (currentQuestionIndex > 0) {
                     currentQuestionIndex--;
                     showQuestion(currentQuestionIndex);
@@ -197,7 +198,8 @@ document.addEventListener('DOMContentLoaded', () => {
                }
             });
        
-            nextButton.addEventListener('click', () => {
+            nextButton.addEventListener('click', (event) => {
+                event.preventDefault();
                 checkAnswer();
                if (currentQuestionIndex < myQuestions.length - 1) {
                    currentQuestionIndex++;
