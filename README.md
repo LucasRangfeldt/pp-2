@@ -3,12 +3,13 @@
 ## User Experience
 
 1.As a user, I want to be able to navigate the site on first look.
+
 2.As a user, I want to get straight to the point, no uneccesary clicks
 
 ### Design
 
-    When writing the quiz questions I had to browse a lot of History websites regarding World War 2, when doing so I realised that most of them was extremely hard to navigate, and also hard to find what I was looking for.
-    So I went with the exact opposite, background is rather dark, with images at the top that symbolizes learning. After about three seconds as a visitor you will know exactly what the site is about, that's the design I wanted, and that's the design I got.
+When writing the quiz questions I had to browse a lot of History websites regarding World War 2, when doing so I realised that most of them was extremely hard to navigate, and also hard to find what I was looking for.
+So I went with the exact opposite, background is rather dark, with images at the top that symbolizes learning. After about three seconds as a visitor you will know exactly what the site is about, that's the design I wanted, and that's the design I got.
 
 ## Typography
 
