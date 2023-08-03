@@ -19,7 +19,7 @@ The  other text snippets on the site, have the font 'Libre Baskerville' also fal
 ## Responsive
 
 The site has been tested on ui.dev, responsiveness was achieved using flexbox. And also some media Querys.
-![ss-for-pp-2]
+!![Website shown on different devices](http://assets/images/ss-for-pp-2.jpg)
 
 ## Features
 
