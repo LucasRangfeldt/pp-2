@@ -1,82 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Noto+Serif+Vithkuqi:wght@500&display=swap');
-          </style>
-                    <link rel="stylesheet" href="assets/style.css">
-                        <title>Quiz</title>
-</head>
-<body> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Noto+Serif+Vithkuqi:wght@500&display=swap');
+    </style>
+    <link rel="stylesheet" href="assets/style.css">
+    <title>Quiz</title>
+  </head>
+  <body>
     <div class="navbar">
-        <ul class="menu">
-
-            <li><a href="index.html">Home</a></li>
-
-            <li><a href="#MyScore">My Score</a></li>
-
-            <li><a href="#Request-A-Subject">Request A Subject</a></li>
-        </ul>
+      <ul class="menu">
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+        <li>
+          <a href="#MyScore">My Score</a>
+        </li>
+        <li>
+          <a href="#Request">Request A Subject</a>
+        </li>
+      </ul>
     </div>
     <div class="title">
-        <h1>QuizMaster</h1>
-        <h2>We Love Learning</h2>
+      <h1>QuizMaster</h1>
+      <h2>We Love Learning</h2>
     </div>
     <div class="flex-head">
-        <div class="image-1">
-            <img src="../pp-2/assets/images/learningtime.jpeg" alt="Young girl studying in a lab by herself">
-        </div>
-        <div class="image-2">
-            <img src="../pp-2/assets/images/gametime.jpeg" alt="Wooden cubes spelling learn">
-        </div>
-        <div class="image-3">
-            <img src="../pp-2/assets/images/learntime.jpeg" alt="A man and a woman rehearsing together">
-        </div>
+      <div class="image-1">
+        <img src="../pp-2/assets/images/learningtime.jpeg" alt="Young girl studying in a lab by herself">
+      </div>
+      <div class="image-2">
+        <img src="../pp-2/assets/images/gametime.jpeg" alt="Wooden cubes spelling learn">
+      </div>
+      <div class="image-3">
+        <img src="../pp-2/assets/images/learntime.jpeg" alt="A man and a woman rehearsing together">
+      </div>
     </div>
-        <div class="Current">
-            <h2 class="quiz-title">Current Theme</h2>
-            <h4 class="quiz-title">World War II</h4>
-            <p class="quiz-info">Let's test your knowledge about the bloodiest war in human history, 10 questions, 30 possible answers.</p>
+    <div class="Current">
+      <h2 class="quiz-title">Current Theme</h2>
+      <h4 class="quiz-title">World War II</h4>
+      <p class="quiz-info">Let's test your knowledge about the bloodiest war in human history, 10 questions, 30 possible answers.</p>
+    </div>
+    <div id="quiz-cont">
+      <div class="question-image-section">
+        <div id="question" class="question-box"></div>
+        <div id="answers" class="answers-box correct-answer wrong-answer"></div>
+        <div id="quiz-image" class="quiz-image"></div>
+        <div class="button">
+          <button id="previous" class="button">Previous</button>
+          <button id="next" class="button">Next</button>
         </div>
-        <div id="quiz-cont">
-          <div class="question-image-section">
-            <div id="question" class="question-box"></div>
-            <div id="answers" class="answers-box"></div>
-            <div id="quiz-image" class="quiz-image"></div>
-            <div class="button">
-                <button id="previous" class="button">Previous</button>
-                <button id="next" class="button">Next</button>
-             </div>
-            <button id="showResult" class="button">Show Your Results</button>
-            <div id="result">
-                <h2>Your Result</h2>
-                <p id="score"></p>
-            </div>
-          </div>
+        <div id="result">
+          <h2>Your Result</h2>
+          <p id="score"></p>
         </div>
-        <div class="break">
+        <button id="showResult" class="button">Show Your Results</button>
+      </div>
+    </div>
+    <div class="break"></div>
+    <section id="Request">
+      <div class="title request-title">
+        <h2>Welcome to the Request section! Here you can share ideas for upcoming quiz subjects.</h2>
+      </div>
+      <div class="suggest sign">
+        <h3>Have a great idea that you would like to share?</h3>
+        <div class="para">
+          <p>Simply type it in below and click submit, we read messages daily, <br> if we decide to use your idea you will ofcourse be credited! </p>
         </div>
-        <section id="Request">
-            <div class="title request-title">
-                <h2>Welcome to the Request section! Here you can share ideas for upcoming quiz subjects.</h2>
+        <div class="form-cont">
+          <form id="idea">
+            <div class="idea-div-1">
+              <label for="name">Your Name:</label>
+              <input type="text" name="name" id="name" required>
             </div>
-            <div class="suggest sign">
-                <h3>Have a great idea that you would like to share?</h3>
-                    <div class="para">
-                        <p>Simply type it in below and click submit, we read messages daily,<br> if we decide to use your idea you will ofcourse be credited!</p>
-                    </div>
-                    <div class="register">
-                        <label for="name">Your Name:</label>
-                        <input type="text" name="name" id="name" required>
-                    </div>
-                    <div class="idea-box">
-                        
-                    </div>
+            <div class="idea-div-2">
+              <label for="">Your Email:</label>
+              <input type="email" name="email" id="email" required>
             </div>
-                
-        </section>
+            <div class="idea-div-3">
+              <textarea required></textarea>
+            </div>
+            <div class="idea-div-4">
+              <input type="submit" value="Submit">
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
     <script src="assets/java.js"></script>
-</body>
+  </body>
 </html>

@@ -66,6 +66,7 @@ body {
   }
   
   /* quiz info section */
+
   .quiz-title {
     font-family: 'Noto Serif Vithkuqi', serif;
     text-align: center;
@@ -83,11 +84,13 @@ body {
   /* image matching the current quiz-theme */
 
   /* Next and previous button styles */
+
 .button {
     text-align: center;
     margin: 20px 0 20px 0;
     font-size: 20px;
 }
+
 .button a {
     display: inline-block;
     padding: 10px 20px;
@@ -98,22 +101,25 @@ body {
 }
 
 /* Quiz Style */
+
 .quiz-cont {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
+/* quiz-box */
+
 .question-image-section {
   border: 2px solid grey;
   border-radius: 10px;
   max-width: 600px;
-  max-height: 750px;
   background-color: white;
   display: flex;
   flex-direction: column;
   margin: 0 auto 20px;
   align-items: stretch;
 }
+/* question box inside the quiz */
 
 .question-box {
   background-color: #8F8D97;
@@ -125,6 +131,7 @@ body {
   text-align: center;
   padding: 20px;
 }
+
 #quiz-image {
   display: flex;
   justify-content: center;
@@ -145,6 +152,7 @@ body {
   }
 
 }
+/* image connected to question */
 #quiz-image img {
   max-width: 100%;
  max-height: 300px;
@@ -154,6 +162,7 @@ body {
 #question {
     text-align: center;
 }
+/* for answer-options, also if right and wrong */
 .answers-box {
   letter-spacing: 1px;
   text-align: center;
@@ -162,12 +171,21 @@ body {
   font-family: 'Libre Baskerville', serif;
 
 }
+.correct-answer {
+  background-color: green;
+}
+.wrong-answer {
+  background-color: red;
+}
+
+
 /* Result box */
 #result {
   text-align: center;
   color: black;
   font-family: 'Libre Baskerville', serif;
 }
+/* break-line quiz and idea section */
 .break {
   margin: 50px 0 50px 0;
   width: 100%;
@@ -178,21 +196,37 @@ body {
   height: 100vh;
 }
 
+/* Form and idea section */
 
+/* title for idea section */
 .suggest {
   margin: 50px 0 50px 0;
   font-family: 'Libre Baskerville', serif;
   text-align: center;
 }
+/* paragraph related to title */
+
 .para {
   margin: 50px 0 50px 0;
   text-align: center;
 }
-.register {
-  display: flex;
-  align-items: center;
-  position: center;
+
+/* form for idea-submission */
+.form-cont {
+  display: grid;
+  grid-template-columns: 1fr;
 }
-#submit-idea {
-  width: inherit;
+
+.idea-div-1,
+.idea-div-2,
+.idea-div-3,
+.idea-div-4 {
+margin: 15px;
+grid-row: span 1;
+}
+
+textarea {
+  width: 150px;
+  padding: 15px;
+  font-size: 16px;
 }
